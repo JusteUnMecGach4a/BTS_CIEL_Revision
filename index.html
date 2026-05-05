@@ -19,13 +19,14 @@
     <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="cyber-font text-xl font-bold gradient-text">BTS CIEL REVISION</h1>
-            <div class="space-x-4 text-sm font-semibold uppercase tracking-wider">
+            <div class="space-x-4 text-sm font-semibold uppercase tracking-wider flex items-center">
                 <a href="#b1" class="hover:text-sky-400 transition">B1</a>
                 <a href="#b2" class="hover:text-sky-400 transition">B2</a>
                 <a href="#b3" class="hover:text-sky-400 transition">B3</a>
                 <a href="#c1" class="hover:text-sky-400 transition">C1</a>
                 <a href="#e4" class="hover:text-sky-400 transition">E4</a>
                 <a href="#f1" class="hover:text-sky-400 transition">F1</a>
+                <a href="https://0550002d.moodle.monbureaunumerique.fr/my/courses.php" target="_blank" class="ml-4 px-3 py-1 bg-sky-500/20 text-sky-400 rounded-lg border border-sky-500/30 hover:bg-sky-500/40 transition">Moodle ENT</a>
             </div>
         </div>
     </nav>
@@ -58,12 +59,17 @@
                         </ul>
                     </div>
                     <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5">
-                        <h4 class="text-indigo-400 font-bold mb-2">Modélisation Merise</h4>
-                        <p class="text-sm text-slate-400 mb-4">La base du projet repose sur une structure SQL solide :</p>
-                        <div class="flex justify-around text-center text-xs font-mono">
-                            <div class="p-2 border border-slate-700 rounded">MCD<br>Conceptuel</div>
-                            <div class="p-2 border border-slate-700 rounded">MLD<br>Logique</div>
-                            <div class="p-2 border border-slate-700 rounded">MPD<br>Physique</div>
+                        <h4 class="text-indigo-400 font-bold mb-4">Modélisation Merise (Détails)</h4>
+                        <div class="space-y-4 text-xs">
+                            <div class="p-3 border border-slate-700 rounded bg-slate-800/50">
+                                <span class="text-sky-400 font-bold uppercase">MCD :</span> BAIE (1,1) -[Contient]- (1,1) CAPTEUR (0,n) -[Génère]- (1,1) MESURE
+                            </div>
+                            <div class="grid grid-cols-1 gap-2 font-mono">
+                                <div class="p-2 bg-slate-800 rounded">TABLE <span class="text-pink-400">baies</span> : id_baie (PK), nom_baie</div>
+                                <div class="p-2 bg-slate-800 rounded">TABLE <span class="text-pink-400">capteurs</span> : id_capteur (PK), ref, #id_baie (FK)</div>
+                                <div class="p-2 bg-slate-800 rounded">TABLE <span class="text-pink-400">mesures</span> : id (PK), temp, hum, date, #id_capteur (FK)</div>
+                            </div>
+                            <p class="text-[10px] text-slate-500 italic">Moteur InnoDB pour l'intégrité référentielle.</p>
                         </div>
                     </div>
                 </div>
