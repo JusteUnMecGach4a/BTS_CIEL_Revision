@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport de Stage - Hub BTS CIEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="../dashboard.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← HUB REVISION</a>
+            <span class="cyber-font text-amber-400 text-sm font-bold">RAPPORT DE STAGE</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 max-w-4xl">
+        <header class="mb-12">
+            <h1 class="cyber-font text-4xl font-bold mb-4">Méthodologie du Stage</h1>
+            <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Structure du Rapport -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-amber-400 mb-6 flex items-center">
+                    <span class="p-2 bg-amber-500/20 rounded-lg mr-3">01</span>
+                    Structure du Rapport
+                </h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                        <h3 class="font-bold text-white mb-2">1. Introduction</h3>
+                        <p class="text-xs text-slate-400">Présentation rapide du parcours, choix de l'entreprise et objectifs du stage.</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                        <h3 class="font-bold text-white mb-2">2. Présentation de l'Entreprise</h3>
+                        <p class="text-xs text-slate-400">Secteur d'activité, organigramme, infrastructure technique (réseaux, serveurs).</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                        <h3 class="font-bold text-white mb-2 text-amber-300">3. Travaux Réalisés (Cœur du rapport)</h3>
+                        <p class="text-xs text-slate-400">Analyse des besoins, solutions techniques choisies, schémas réseau (Visio/Packet Tracer), captures d'écran de configuration, tests de validation.</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                        <h3 class="font-bold text-white mb-2">4. Conclusion & Bilan</h3>
+                        <p class="text-xs text-slate-400">Compétences acquises, difficultés rencontrées et perspectives professionnelles.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conseils pour l'Oral -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-sky-400 mb-6 flex items-center">
+                    <span class="p-2 bg-sky-500/20 rounded-lg mr-3">02</span>
+                    Préparer la Soutenance
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-800/30 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2">Le Support (Diaporama)</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Peu de texte, beaucoup de visuels (schémas, photos). Utilisez une charte graphique sobre mais "tech".
+                        </p>
+                    </div>
+                    <div class="p-6 bg-slate-800/30 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2">La Démonstration</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Si possible, prévoyez une vidéo de démonstration ou un accès distant sécurisé pour montrer vos réalisations en direct.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checklist Technique -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-rose-400 mb-6 flex items-center">
+                    <span class="p-2 bg-rose-500/20 rounded-lg mr-3">03</span>
+                    Checklist Technique
+                </h2>
+                <div class="bg-slate-950/50 p-6 rounded-2xl">
+                    <ul class="text-xs space-y-3 text-slate-400">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Respect de la confidentialité (anonymisation des IPs/mots de passe).</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Lexique technique en fin de rapport.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Annexes complètes (scripts, fiches techniques).</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Vérification orthographique rigoureuse.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            Revision Hub BTS CIEL - Méthodologie Stage
+        </footer>
+    </main>
+</body>
+</html>
