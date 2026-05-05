@@ -3,469 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physique-Chimie - BTS CIEL</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Physique-Chimie - Hub BTS CIEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script>
         MathJax = {
             tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #f43f5e, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
 </head>
-<body>
-    <header class="hero">
-        <div class="glass-panel">
-            <a href="../index.html" class="tag" style="position: absolute; top: 1rem; left: 1rem; text-decoration: none;">
-                &larr; Accueil
-            </a>
-            <button id="theme-toggle" class="tag" style="position: absolute; top: 1rem; right: 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; border: none; z-index: 10;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                Thème
-            </button>
-            <h1>Physique-Chimie Appliquée</h1>
-            <p>Numérisation d'une tension (Chaîne d'acquisition & CAN)</p>
-            <div class="header-tags">
-                <span class="tag tag-accent">Électronique</span>
-                <span class="tag tag-level">Signaux</span>
-            </div>
-            <a href="#chaines" class="scroll-down">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-            </a>
+<body class="min-h-screen pb-20">
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="../index.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← HUB REVISION</a>
+            <span class="cyber-font text-rose-400 text-sm font-bold">PHYSIQUE-CHIMIE</span>
         </div>
-    </header>
+    </nav>
 
-    <main class="container">
-        <nav class="toc">
-            <div class="toc-group" style="margin-bottom: 1rem;">
-                <div style="font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; color: #84fab0; margin-bottom: 0.5rem; padding-left: 1rem; font-weight: bold;">✅ Bilan BTS Blanc (05/05/2026)</div>
-                <a href="#chaines" class="toc-item active">1. Chaînes d'acquisition</a>
-                <a href="#echantillonnage" class="toc-item">2. Échantillonnage</a>
-                <a href="#can" class="toc-item">3. CAN & Quantum</a>
-                <a href="#snr" class="toc-item">4. Rapport Signal/Bruit</a>
-            </div>
-            <div class="toc-group" style="margin-bottom: 1rem;">
-                <div style="font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; color: #a1a1aa; margin-bottom: 0.5rem; padding-left: 1rem; font-weight: bold;">📚 Approfondissement</div>
-                <a href="#amplification" class="toc-item">5. Amplification & Circuits</a>
-                <a href="#ondes" class="toc-item">6. Ondes & Lignes</a>
-                <a href="#reponse" class="toc-item">7. Réponse des Systèmes</a>
-                <a href="#signaux" class="toc-item">8. Analyse des Signaux</a>
-            </div>
-            <a href="#documents" class="toc-item" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 0.5rem;">Documents du cours</a>
-        </nav>
+    <main class="container mx-auto px-4 max-w-4xl">
+        <header class="mb-12">
+            <h1 class="cyber-font text-4xl font-bold mb-4 text-white">Signaux & Systèmes</h1>
+            <div class="h-1 w-20 bg-rose-500 rounded-full"></div>
+        </header>
 
-        <!-- 1. CHAINES D'ACQUISITION -->
-        <section id="chaines" class="section">
-            <div class="section-title">
-                <h2>1. Chaînes d'acquisition et de restitution</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass span-full">
-                    <p>La numérisation permet d'améliorer le traitement, le stockage et la transmission des signaux.</p>
-                    
-                    <h3 style="margin-top: 1.5rem; color: #84fab0;">Chaîne d'acquisition</h3>
-                    <p style="margin-top: 0.5rem; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; line-height: 2;">
-                        Signal analogique $x_a(t)$ &rarr; Échantillonneur-bloqueur &rarr; Signal échantillonné $x_{eb}(t)$ &rarr; <strong>CAN</strong> &rarr; Suite binaire $\{x_n\}$
-                    </p>
-
-                    <h3 style="margin-top: 1.5rem; color: #ff9a9e;">Chaîne de restitution</h3>
-                    <p style="margin-top: 0.5rem; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; line-height: 2;">
-                        Signal numérique $\{x_n\}$ &rarr; <strong>CNA</strong> &rarr; Tension en marches d'escalier $y_{eb}(t)$ &rarr; Filtre de lissage (passe-bas) &rarr; Signal analogique $y_a(t)$
-                    </p>
-
-                    <div style="margin-top: 2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; overflow: hidden;">
-                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.2);">🧠 Exercice Rapide</div>
-                        <div style="padding: 1rem;">
-                            <p>Quel composant de la chaîne de restitution permet de supprimer l'effet "marches d'escalier" du signal issu du CNA ?</p>
-                            <details style="margin-top: 1rem; cursor: pointer;">
-                                <summary style="color: #84fab0; font-weight: bold;">Voir la réponse</summary>
-                                <p style="margin-top: 0.5rem; padding-left: 1rem; border-left: 3px solid #84fab0;">C'est le <strong>filtre de lissage</strong> (qui est un filtre passe-bas). Il adoucit les variations brusques pour reconstituer un signal analogique fluide.</p>
-                            </details>
+        <div class="space-y-8">
+            <!-- Numérisation -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-rose-400 mb-6 flex items-center">
+                    <span class="p-2 bg-rose-500/20 rounded-lg mr-3">01</span>
+                    Numérisation & CAN
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-2 text-sm">Théorème de Shannon</h3>
+                        <p class="text-xs text-slate-400 mb-2">Fréquence d'échantillonnage minimale :</p>
+                        <div class="bg-slate-950/50 p-3 rounded font-mono text-center text-rose-400">
+                            $f_e > 2 \cdot f_{max}$
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-2 text-sm">Le Quantum ($q$)</h3>
+                        <p class="text-xs text-slate-400 mb-2">Plus petite variation détectable :</p>
+                        <div class="bg-slate-950/50 p-3 rounded font-mono text-center text-rose-400">
+                            $q = \frac{\Delta U}{2^n - 1}$
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 2. ECHANTILLONNAGE -->
-        <section id="echantillonnage" class="section">
-            <div class="section-title">
-                <h2>2. Échantillonnage et Spectre</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass">
-                    <h3>Fréquence et Condition de Shannon</h3>
-                    <p>L'échantillonnage prélève des valeurs à la fréquence $f_e = \frac{1}{T_e}$.</p>
-                    <div class="formula-box" style="margin-top: 1rem; background: rgba(132, 250, 176, 0.1); border-left: 4px solid #84fab0; padding: 1rem;">
-                        <strong>Condition de Shannon :</strong><br>
-                        Pour éviter le repliement du spectre (aliasing) et pouvoir reconstruire le signal sans erreur, la fréquence d'échantillonnage doit être au moins deux fois supérieure à la fréquence maximale du signal :
-                        <div class="formula" style="font-size: 1.2em; text-align: center; margin-top: 1rem;">$$f_e > 2 \times f_{max}$$</div>
+            <!-- Réponse Systèmes -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-orange-400 mb-6 flex items-center">
+                    <span class="p-2 bg-orange-500/20 rounded-lg mr-3">02</span>
+                    Réponse des Systèmes
+                </h2>
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5">
+                    <h3 class="font-bold text-white mb-4 text-sm">Premier Ordre</h3>
+                    <p class="text-xs text-slate-400 mb-4">La réponse à un échelon est caractérisée par la constante de temps $\tau$. À $t = 3\tau$, le signal a atteint 95% de sa valeur finale.</p>
+                    <div class="bg-slate-950/50 p-4 rounded text-center text-xs text-orange-300">
+                        $s(t) = S_{max}(1 - e^{-t/\tau})$
                     </div>
                 </div>
+            </section>
 
-                <div class="card glass">
-                    <h3>Filtre anti-repliement</h3>
-                    <p>Il s'agit d'un filtre passe-bas placé <strong>avant</strong> l'échantillonneur. Sa fréquence de coupure $f_c$ doit respecter :</p>
-                    <div class="formula-box" style="margin-top: 1rem; text-align: center;">
-                        <div class="formula" style="font-size: 1.2em;">$$f_c < \frac{f_e}{2}$$</div>
+            <!-- SNR -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-yellow-400 mb-6 flex items-center">
+                    <span class="p-2 bg-yellow-500/20 rounded-lg mr-3">03</span>
+                    Qualité du Signal (SNR)
+                </h2>
+                <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                    <p class="text-xs text-slate-400 mb-4">Rapport Signal sur Bruit de quantification théorique (en dB) :</p>
+                    <div class="bg-slate-950/50 p-4 rounded text-center text-lg text-yellow-500 font-bold">
+                        $SNR_{dB} = 1,8 + 6 \cdot N$
                     </div>
                 </div>
+            </section>
+        </div>
 
-                <div class="card glass span-full" style="border: 1px solid rgba(255,255,255,0.2); padding: 0; overflow: hidden;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.2);">🧠 Exercice Rapide</div>
-                    <div style="padding: 1rem;">
-                        <p>L'oreille humaine perçoit des sons jusqu'à une fréquence maximale d'environ $f_{max} = 20\text{ kHz}$. D'après le théorème de Shannon, quelle doit être la fréquence d'échantillonnage minimale $f_e$ pour numériser un morceau de musique sans perte d'information (sans aliasing) ?</p>
-                        <details style="margin-top: 1rem; cursor: pointer;">
-                            <summary style="color: #84fab0; font-weight: bold;">Voir la réponse</summary>
-                            <p style="margin-top: 0.5rem; padding-left: 1rem; border-left: 3px solid #84fab0;">D'après la condition de Shannon, il faut $f_e > 2 \times f_{max}$. Donc $f_e > 2 \times 20\text{ kHz} = 40\text{ kHz}$.<br><br><em>Note : C'est pour cette raison que la fréquence d'échantillonnage standard d'un CD audio a été fixée à 44,1 kHz !</em></p>
-                        </details>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. CAN ET QUANTUM -->
-        <section id="can" class="section">
-            <div class="section-title">
-                <h2>3. La Conversion Analogique-Numérique (CAN)</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass span-full">
-                    <p>Le CAN convertit la tension en un nombre binaire $M$ codé sur $n$ bits.</p>
-                    <p style="margin-top: 0.5rem; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                    <strong>Valeur décimale d'un mot binaire :</strong><br>
-                    $$M_{10} = b_{n-1} \cdot 2^{n-1} + b_{n-2} \cdot 2^{n-2} + \dots + b_0 \cdot 2^0$$</p>
-                </div>
-
-                <div class="card glass">
-                    <h3>Le Quantum ($q$)</h3>
-                    <p>Le quantum est la plus petite variation de tension que le convertisseur peut coder. Pour une tension pleine échelle $\Delta U$ et un codage sur $n$ bits :</p>
-                    <div class="formula-box" style="text-align: center; margin-top: 1rem;">
-                        <div class="formula" style="font-size: 1.2em;">$$q = \frac{\Delta U}{2^n - 1}$$</div>
-                    </div>
-                </div>
-
-                <div class="card glass">
-                    <h3>Condition de conversion</h3>
-                    <p>Pour que l'acquisition soit correcte, le temps de conversion $T_c$ du CAN doit être inférieur à la période d'échantillonnage :</p>
-                    <div class="formula-box" style="text-align: center; margin-top: 1rem;">
-                        <div class="formula" style="font-size: 1.2em;">$$T_c < T_e$$</div>
-                    </div>
-                </div>
-
-                <div class="card glass span-full" style="border: 1px solid rgba(255,255,255,0.2); padding: 0; overflow: hidden;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.2);">🧠 Exercice Rapide</div>
-                    <div style="padding: 1rem;">
-                        <p>Un capteur de température délivre une tension comprise entre $0\text{V}$ et $5\text{V}$ ($\Delta U = 5\text{V}$). Le système de traitement utilise un CAN codé sur $8\text{ bits}$. Calculez le quantum $q$ du convertisseur (la plus petite variation de tension détectable).</p>
-                        <details style="margin-top: 1rem; cursor: pointer;">
-                            <summary style="color: #84fab0; font-weight: bold;">Voir la réponse</summary>
-                            <p style="margin-top: 0.5rem; padding-left: 1rem; border-left: 3px solid #84fab0;">On applique la formule du quantum : $q = \frac{\Delta U}{2^n - 1}$<br><br>$q = \frac{5}{2^8 - 1} = \frac{5}{256 - 1} = \frac{5}{255} \approx 0,0196\text{ V}$<br><br>Le quantum est d'environ <strong>$19,6\text{ mV}$</strong>. Le système ne détectera une variation de température que si la tension change d'au moins 19,6 mV.</p>
-                        </details>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. SNR -->
-        <section id="snr" class="section">
-            <div class="section-title">
-                <h2>4. Rapport Signal sur Bruit (SNR)</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass span-full">
-                    <p>Le SNR mesure la qualité de la numérisation en comparant la puissance du signal utile à celle du bruit de quantification.</p>
-                    
-                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                        <div style="flex: 1; min-width: 250px;">
-                            <h4 style="color: #ff9a9e; margin-bottom: 0.5rem;">Puissances (signal sinusoïdal)</h4>
-                            <p style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">Signal : $$P_{signal} = \frac{E_{max}^2}{2R}$$</p>
-                            <p style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center; margin-top: 0.5rem;">Bruit : $$P_{bruit} = \frac{q^2}{12R}$$</p>
-                        </div>
-                        <div style="flex: 1; min-width: 250px; background: rgba(143, 211, 244, 0.1); border-left: 4px solid #8fd3f4; padding: 1.5rem; border-radius: 8px;">
-                            <h4 style="margin-bottom: 0.5rem;">Formule du SNR (en dB)</h4>
-                            <p>Pour un signal sinusoïdal codé sur $N$ bits :</p>
-                            <div class="formula" style="text-align: center; font-size: 1.2em; margin-top: 1rem;">$$SNR_{dB} = 10 \cdot \log\left(\frac{P_{signal}}{P_{bruit}}\right) = 1,8 + 6N$$</div>
-                            <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9em;"><i>Exemple : Un CD audio codé sur 16 bits possède un $SNR_{dB} = 98 \text{ dB}$.</i></p>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; overflow: hidden;">
-                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.2);">🧠 Exercice Rapide</div>
-                        <div style="padding: 1rem;">
-                            <p>Un nouvel oscilloscope numérique numérise les signaux sur $12\text{ bits}$. Quel est le rapport signal/bruit ($SNR_{dB}$) théorique maximal que l'on peut espérer si l'on mesure un signal parfaitement sinusoïdal ?</p>
-                            <details style="margin-top: 1rem; cursor: pointer;">
-                                <summary style="color: #84fab0; font-weight: bold;">Voir la réponse</summary>
-                                <p style="margin-top: 0.5rem; padding-left: 1rem; border-left: 3px solid #84fab0;">On applique la formule approchée pour un signal sinusoïdal : $SNR_{dB} = 1,8 + 6N$<br><br>Ici $N = 12$, donc : $SNR_{dB} = 1,8 + 6 \times 12 = 1,8 + 72 = \mathbf{73,8\text{ dB}}$.</p>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. AMPLIFICATION -->
-        <section id="amplification" class="section">
-            <div class="section-title">
-                <h2>5. Amplification & Circuits</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass span-full">
-                    <p>L'amplification permet d'augmenter l'amplitude d'un signal, souvent nécessaire avant de l'injecter dans un CAN pour utiliser toute la plage de dynamique (Pleine Échelle).</p>
-                    
-                    <h3 style="margin-top: 1.5rem; color: #84fab0;">Gain en tension</h3>
-                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                        <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                            <p><strong>Gain linéaire ($A_v$) :</strong></p>
-                            <div class="formula" style="text-align: center; margin-top: 0.5rem;">$$A_v = \frac{V_s}{V_e}$$</div>
-                        </div>
-                        <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                            <p><strong>Gain en décibels ($G_{dB}$) :</strong></p>
-                            <div class="formula" style="text-align: center; margin-top: 0.5rem;">$$G_{dB} = 20 \log(|A_v|)$$</div>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-top: 1.5rem; color: #ff9a9e;">Lois fondamentales en électricité</h3>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; line-height: 1.8;">
-                        <li><strong>Loi d'Ohm :</strong> $U = R \cdot I$</li>
-                        <li><strong>Loi des mailles :</strong> La somme algébrique des tensions dans une maille est nulle.</li>
-                        <li><strong>Loi des nœuds :</strong> La somme des intensités des courants qui entrent par un nœud est égale à la somme des intensités qui en sortent.</li>
-                        <li><strong>Pont diviseur de tension :</strong> $V_1 = V_{in} \cdot \frac{R_1}{R_1 + R_2}$</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. ONDES ET LIGNES -->
-        <section id="ondes" class="section">
-            <div class="section-title">
-                <h2>6. Ondes & Lignes de Transmission</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass">
-                    <h3>Ondes Mécaniques & Électromagnétiques</h3>
-                    <p class="text-xs text-slate-400 mb-4">Propagation d'une perturbation emportant de l'énergie sans transport de matière.</p>
-                    <ul class="text-[11px] space-y-2 text-slate-400 mb-4">
-                        <li>• <strong class="text-white">Célérité :</strong> Vitesse de propagation ($v$).</li>
-                        <li>• <strong class="text-white">Polarisation :</strong> Direction de l'oscillation.</li>
-                        <li>• <strong class="text-white">Puissance :</strong> Énergie transportée par unité de temps.</li>
-                    </ul>
-                    <div class="formula-box" style="margin-top: 1rem; border-left: 4px solid #84fab0; padding: 1rem; background: rgba(132, 250, 176, 0.1);">
-                        <strong>Longueur d'onde ($\lambda$) :</strong>
-                        <div class="formula" style="font-size: 1.2em; text-align: center; margin-top: 0.5rem;">$$\lambda = \frac{v}{f} = v \cdot T$$</div>
-                    </div>
-                </div>
-
-                <div class="card glass">
-                    <h3>Lignes de transmission</h3>
-                    <p class="text-xs text-slate-400 mb-4">Modélisation des câbles pour les hautes fréquences.</p>
-                    <ul class="text-[11px] space-y-2 text-slate-400">
-                        <li>• <strong class="text-white">Impédance caractéristique ($Z_c$) :</strong> Impédance propre à la ligne (ex: $50\Omega$ ou $75\Omega$).</li>
-                        <li>• <strong class="text-white">Coefficient de réflexion ($\Gamma$) :</strong> $\Gamma = \frac{Z_L - Z_c}{Z_L + Z_c}$.</li>
-                        <li>• <strong class="text-white">Adaptation d'impédance :</strong> On veut $Z_L = Z_c$ pour que $\Gamma = 0$.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. RÉPONSE DES SYSTÈMES -->
-        <section id="reponse" class="section">
-            <div class="section-title">
-                <h2>7. Réponse des Systèmes</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass">
-                    <h3>Réponse Temporelle</h3>
-                    <p class="text-xs text-slate-400 mb-4">Étude de la réponse à un échelon (variation brusque de l'entrée).</p>
-                    <ul class="text-[11px] space-y-2 text-slate-400">
-                        <li>• <strong class="text-white">1er Ordre :</strong> Caractérisé par la constante de temps $\tau$. Réponse en $1 - e^{-t/\tau}$.</li>
-                        <li>• <strong class="text-white">2ème Ordre :</strong> Caractérisé par $f_0$ (fréquence propre) et $z$ (coefficient d'amortissement).</li>
-                    </ul>
-                </div>
-
-                <div class="card glass">
-                    <h3>Réponse Fréquentielle & Filtrage</h3>
-                    <p class="text-xs text-slate-400 mb-4">Étude du comportement en fonction de la fréquence (Diagrammes de Bode).</p>
-                    <div class="grid grid-cols-2 gap-2 text-[10px]">
-                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Passe-bas</div>
-                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Passe-haut</div>
-                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Passe-bande</div>
-                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Coupe-bande</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. ANALYSE DES SIGNAUX -->
-        <section id="signaux" class="section">
-            <div class="section-title">
-                <h2>8. Analyse des Signaux</h2>
-            </div>
-            <div class="grid">
-                <div class="card glass span-full">
-                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                        <div style="flex: 1; min-width: 280px;">
-                            <h3 style="color: #84fab0;">Analyse Temporelle</h3>
-                            <p>Étude du signal en fonction du temps : $s(t)$.</p>
-                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem; line-height: 1.8;">
-                                <li><strong>Période ($T$) :</strong> Durée d'un motif élémentaire (en s).</li>
-                                <li><strong>Fréquence ($f$) :</strong> Nombre de motifs par seconde ($f = 1/T$, en Hz).</li>
-                                <li><strong>Valeur moyenne :</strong> Composante continue du signal.</li>
-                                <li><strong>Valeur efficace ($V_{eff}$) :</strong> Pour un signal sinusoïdal, $V_{eff} = \frac{V_{max}}{\sqrt{2}}$.</li>
-                            </ul>
-                        </div>
-                        <div style="flex: 1; min-width: 280px;">
-                            <h3 style="color: #ff9a9e;">Analyse Fréquentielle</h3>
-                            <p>Étude de la répartition spectrale d'un signal.</p>
-                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem; line-height: 1.8;">
-                                <li><strong>Série de Fourier :</strong> Tout signal périodique peut se décomposer en une somme de signaux sinusoïdaux (fondamental + harmoniques).</li>
-                                <li><strong>Spectre :</strong> Représentation de l'amplitude (ou phase) en fonction de la fréquence.</li>
-                                <li><strong>Harmoniques :</strong> Fréquences multiples du fondamental ($f_n = n \cdot f_1$).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DOCUMENTS -->
-        <section id="documents" class="section">
-            <div class="section-title">
-                <h2>Documents & Cours</h2>
-                <div class="badge badge-primary">Fichiers D:\Cours\</div>
-            </div>
-
-            <div class="grid">
-                <!-- Catégorie 1: Signaux & Numérisation -->
-                <div class="card glass">
-                    <h3 style="color: #84fab0; margin-bottom: 1rem;">1. Signaux & Numérisation</h3>
-                    <ul class="documents-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <li>
-                            <a href="assets/Physique_Chimie/Numérisation.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #8fd3f4; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Numérisation.pdf</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/Bruit%20et%20SNR.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #8fd3f4; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Bruit et SNR.pdf</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Catégorie 2: Analyse des Signaux -->
-                <div class="card glass">
-                    <h3 style="color: #ff9a9e; margin-bottom: 1rem;">2. Analyse des Signaux</h3>
-                    <ul class="documents-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <li>
-                            <a href="assets/Physique_Chimie/Ch%201%20Analyse%20temporelle%20.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff9a9e; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Ch 1 Analyse temporelle</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/Ch%202%20Analyse%20frequentielle.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff9a9e; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Ch 2 Analyse frequentielle</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/R%C3%A9ponse%20temporelle.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff9a9e; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Réponse temporelle</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/ch4%20r%C3%A9ponse%20fr%C3%A9quentielle.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff9a9e; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Ch 4 Réponse fréquentielle</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Catégorie 3: Circuits & Ondes -->
-                <div class="card glass">
-                    <h3 style="color: #a8b2ff; margin-bottom: 1rem;">3. Circuits & Ondes</h3>
-                    <ul class="documents-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <li>
-                            <a href="assets/Physique_Chimie/les%20lois%20en%20%C3%A9lectricit%C3%A9.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a8b2ff; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Les lois en électricité</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/Ch%203%20Circuits%20lin%C3%A9aires%20r%C3%A9gime%20sinusoidal.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a8b2ff; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Ch 3 Circuits linéaires (Régime Sinusoïdal)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/Amplification.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a8b2ff; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Amplification</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/Lignes%20de%20transmission.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a8b2ff; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Lignes de transmission</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Catégorie 4: Ondes Physiques -->
-                <div class="card glass">
-                    <h3 style="color: #ffd166; margin-bottom: 1rem;">4. Ondes</h3>
-                    <ul class="documents-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <li>
-                            <a href="assets/Physique_Chimie/Ondes%20m%C3%A9caniques.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ffd166; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Ondes mécaniques</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="assets/Physique_Chimie/Ondes%20%C3%A9lectromagn%C3%A9tiques.pdf" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; text-decoration: none; color: inherit; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ffd166; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                                <span>Ondes électromagnétiques</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            Revision Hub BTS CIEL - Physique-Chimie
+        </footer>
     </main>
-
-    <footer>
-        <div class="glass-footer">
-            <p>Physique-Chimie - Adapté pour les étudiants en BTS CIEL.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
-        // Update active TOC item on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.toc-item');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
