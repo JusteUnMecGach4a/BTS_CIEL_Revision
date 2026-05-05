@@ -3,219 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revision Hub - BTS CIEL</title>
+    <title>BTS CIEL | Revision Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script>
-        MathJax = {
-            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; overflow: hidden; }
         .cyber-font { font-family: 'Orbitron', sans-serif; }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .neon-border { border: 1px solid #38bdf8; box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .portal-bg {
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(2, 6, 23, 1) 70%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .glow-circle {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+            filter: blur(40px);
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .btn-portal {
+            position: relative;
+            padding: 1rem 3rem;
+            background: transparent;
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .btn-portal:hover {
+            background: #38bdf8;
+            color: #020617;
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
+        }
+
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+
+        .floating-data {
+            position: absolute;
+            font-family: monospace;
+            font-size: 10px;
+            color: rgba(56, 189, 248, 0.3);
+            pointer-events: none;
+            z-index: 2;
+        }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="cyber-font text-xl font-bold gradient-text">BTS CIEL REVISION</h1>
-            <div class="space-x-4 text-sm font-semibold uppercase tracking-wider flex items-center">
-                <a href="#b1" class="hover:text-sky-400 transition">B1</a>
-                <a href="#b2" class="hover:text-sky-400 transition">B2</a>
-                <a href="#b3" class="hover:text-sky-400 transition">B3</a>
-                <a href="#c1" class="hover:text-sky-400 transition">C1</a>
-                <a href="#e4" class="hover:text-sky-400 transition">E4</a>
-                <a href="#f1" class="hover:text-sky-400 transition">F1</a>
-                <a href="https://0550002d.moodle.monbureaunumerique.fr/my/courses.php" target="_blank" class="ml-4 px-3 py-1 bg-sky-500/20 text-sky-400 rounded-lg border border-sky-500/30 hover:bg-sky-500/40 transition">Moodle ENT</a>
-            </div>
-        </div>
-    </nav>
+<body>
+    <div class="portal-bg">
+        <div class="grid-overlay"></div>
+        <div class="glow-circle"></div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-data top-10 left-10">SYSTEM_STATUS: ACTIVE<br>ENCRYPTION: SHA-256<br>NODE_ID: 0x4F2A</div>
+        <div class="floating-data bottom-10 right-10">CORE_TEMP: 32°C<br>UPLINK: 1.2 GBPS<br>LOCATION: BTS_CIEL_2026</div>
 
-    <!-- Header -->
-    <header class="py-20 text-center relative overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        <div class="container mx-auto relative z-10">
-            <h2 class="cyber-font text-5xl font-bold mb-4 tracking-tighter">SYNTHÈSE DE L'ANNÉE <span class="gradient-text">2026</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Votre centre de révision interactif pour maîtriser tous les blocs de compétences du BTS CIEL.</p>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-4 pb-20 space-y-12">
-        <!-- Matières Générales -->
-        <section id="general" class="scroll-mt-24">
-            <div class="flex items-center justify-between mb-8">
-                <div class="flex items-center">
-                    <div class="p-3 bg-indigo-500/20 rounded-xl mr-4"><svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
-                    <h3 class="cyber-font text-2xl font-bold">MATIÈRES GÉNÉRALES</h3>
-                </div>
-                <div class="px-4 py-1.5 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/30 uppercase tracking-widest">
-                    BTS Blanc Terminé
-                </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="cyber-font text-6xl md:text-8xl font-black mb-2 tracking-tighter text-white">CIEL</h1>
+            <p class="cyber-font text-sky-400 text-lg md:text-xl mb-12 tracking-[10px] uppercase">Revision Hub</p>
+            
+            <div class="max-w-xl mx-auto mb-12 text-slate-400 text-sm md:text-base leading-relaxed">
+                Accédez à l'intégralité des ressources de révision pour le BTS Cybersécurité, Informatique et réseaux, Électronique.
             </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Culture G -->
-                <a href="general/culture_generale.html" class="group glass p-6 rounded-2xl border-l-4 border-l-pink-500 hover:scale-[1.02] transition-all">
-                    <h4 class="cyber-font text-pink-400 text-lg mb-2">Culture G</h4>
-                    <p class="text-slate-400 text-sm mb-4">Méthodologie de l'essai, types de documents et corpus thématiques.</p>
-                    <div class="flex items-center text-xs text-pink-400 font-bold group-hover:translate-x-2 transition-transform">
-                        RÉVISER <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
-                    </div>
-                </a>
-                <!-- Physique -->
-                <a href="general/physique_chimie.html" class="group glass p-6 rounded-2xl border-l-4 border-l-sky-500 hover:scale-[1.02] transition-all">
-                    <h4 class="cyber-font text-sky-400 text-lg mb-2">Physique-Chimie</h4>
-                    <p class="text-slate-400 text-sm mb-4">Numérisation, Shannon, CAN/CNA et analyse spectrale.</p>
-                    <div class="flex items-center text-xs text-sky-400 font-bold group-hover:translate-x-2 transition-transform">
-                        RÉVISER <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
-                    </div>
-                </a>
-                <!-- Maths -->
-                <a href="general/mathematiques.html" class="group glass p-6 rounded-2xl border-l-4 border-l-indigo-500 hover:scale-[1.02] transition-all">
-                    <h4 class="cyber-font text-indigo-400 text-lg mb-2">Mathématiques</h4>
-                    <p class="text-slate-400 text-sm mb-4">Suites arithmétiques/géométriques et limites à l'infini.</p>
-                    <div class="flex items-center text-xs text-indigo-400 font-bold group-hover:translate-x-2 transition-transform">
-                        RÉVISER <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
-                    </div>
-                </a>
-            </div>
-        </section>
 
-        <!-- Blocs Professionnels -->
-        <div class="flex items-center mb-8 pt-8 border-t border-white/5">
-            <div class="p-3 bg-sky-500/20 rounded-xl mr-4"><svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div>
-            <h3 class="cyber-font text-2xl font-bold">BLOCS PROFESSIONNELS</h3>
+            <a href="dashboard.html">
+                <button class="btn-portal">Entrer</button>
+            </a>
         </div>
 
-        <!-- Bloc E4 - Projet Phare -->
-        <section id="e4" class="scroll-mt-24">
-            <div class="glass p-8 rounded-3xl neon-border">
-                <div class="flex items-center mb-6">
-                    <div class="p-3 bg-sky-500/20 rounded-xl mr-4"><svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-                    <h3 class="cyber-font text-2xl font-bold">BLOC E4 : IoT & SUPERVISION</h3>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-sky-400 font-bold mb-2">Projet Server Bay Monitoring</h4>
-                        <ul class="space-y-2 text-slate-300">
-                            <li>• Acquisition AHT20 via ESP32 (I2C)</li>
-                            <li>• Synchronisation temporelle NTP</li>
-                            <li>• Stockage SQL (MariaDB port 13306)</li>
-                            <li>• Dashboard PHP / Chart.js</li>
-                        </ul>
-                    </div>
-                    <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5">
-                        <h4 class="text-indigo-400 font-bold mb-4">Modélisation Merise (Détails)</h4>
-                        <div class="space-y-4 text-xs">
-                            <div class="p-3 border border-slate-700 rounded bg-slate-800/50">
-                                <span class="text-sky-400 font-bold uppercase">MCD :</span> BAIE (1,1) -[Contient]- (1,1) CAPTEUR (0,n) -[Génère]- (1,1) MESURE
-                            </div>
-                            <div class="grid grid-cols-1 gap-2 font-mono">
-                                <div class="p-2 bg-slate-800 rounded">TABLE <span class="text-pink-400">baies</span> : id_baie (PK), nom_baie</div>
-                                <div class="p-2 bg-slate-800 rounded">TABLE <span class="text-pink-400">capteurs</span> : id_capteur (PK), ref, #id_baie (FK)</div>
-                                <div class="p-2 bg-slate-800 rounded">TABLE <span class="text-pink-400">mesures</span> : id (PK), temp, hum, date, #id_capteur (FK)</div>
-                            </div>
-                            <p class="text-[10px] text-slate-500 italic">Moteur InnoDB pour l'intégrité référentielle.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Bloc B2 -->
-            <a href="pro/b2_os.html" class="group glass p-6 rounded-2xl hover:border-sky-500/50 transition">
-                <div class="flex items-center mb-3">
-                    <div class="p-2 bg-sky-500/10 rounded-lg mr-3 group-hover:bg-sky-500/20 transition"><svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg></div>
-                    <h3 class="cyber-font text-sky-400">B2 : Systèmes</h3>
-                </div>
-                <ul class="text-xs space-y-1 text-slate-400 mb-4">
-                    <li>• Noyau GNU/Linux & Distributions</li>
-                    <li>• Structure FHS & Gestion Paquets</li>
-                    <li>• Installation & Config (Debian)</li>
-                </ul>
-                <div class="text-[10px] text-sky-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Voir la fiche →</div>
-            </a>
-
-            <!-- Bloc F1 -->
-            <a href="pro/f1_security.html" class="group glass p-6 rounded-2xl hover:border-rose-500/50 transition">
-                <div class="flex items-center mb-3">
-                    <div class="p-2 bg-rose-500/10 rounded-lg mr-3 group-hover:bg-rose-500/20 transition"><svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
-                    <h3 class="cyber-font text-rose-400">F1 : Sécurité</h3>
-                </div>
-                <ul class="text-xs space-y-1 text-slate-400 mb-4">
-                    <li>• Hachage (MD5, SHA-256)</li>
-                    <li>• Bcrypt & Mots de passe</li>
-                    <li>• Intégrité & Checksums</li>
-                </ul>
-                <div class="text-[10px] text-rose-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Voir la fiche →</div>
-            </a>
-
-            <!-- Bloc E4 -->
-            <a href="pro/e4_iot.html" class="group glass p-6 rounded-2xl hover:border-emerald-500/50 transition">
-                <div class="flex items-center mb-3">
-                    <div class="p-2 bg-emerald-500/10 rounded-lg mr-3 group-hover:bg-emerald-500/20 transition"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-                    <h3 class="cyber-font text-emerald-400">E4 : IoT Project</h3>
-                </div>
-                <ul class="text-xs space-y-1 text-slate-400 mb-4">
-                    <li>• Architecture ESP32/Raspberry Pi</li>
-                    <li>• Modélisation Merise (SQL)</li>
-                    <li>• Dashboard PHP & Cybersécurité</li>
-                </ul>
-                <div class="text-[10px] text-emerald-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Voir la fiche →</div>
-            </a>
-
-            <!-- Bloc B1 -->
-            <a href="pro/b1_architecture.html" class="group glass p-6 rounded-2xl hover:border-sky-500/50 transition">
-                <div class="flex items-center mb-3">
-                    <div class="p-2 bg-sky-500/10 rounded-lg mr-3 group-hover:bg-sky-500/20 transition"><svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg></div>
-                    <h3 class="cyber-font text-sky-400">B1 : Architecture</h3>
-                </div>
-                <ul class="text-xs space-y-1 text-slate-400 mb-4">
-                    <li>• Modèle de Von Neumann</li>
-                    <li>• BIOS / UEFI / POST</li>
-                    <li>• Partitionnement GPT/MBR</li>
-                </ul>
-                <div class="text-[10px] text-sky-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Voir la fiche →</div>
-            </a>
-
-            <!-- Bloc B3 -->
-            <a href="pro/b3_admin_linux.html" class="group glass p-6 rounded-2xl hover:border-indigo-500/50 transition">
-                <div class="flex items-center mb-3">
-                    <div class="p-2 bg-indigo-500/10 rounded-lg mr-3 group-hover:bg-indigo-500/20 transition"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
-                    <h3 class="cyber-font text-indigo-400">B3 : Admin Linux</h3>
-                </div>
-                <ul class="text-xs space-y-1 text-slate-400 mb-4">
-                    <li>• Shell, Pipes & Redirections</li>
-                    <li>• Gestion Droits & FHS</li>
-                    <li>• Scripting Bash & Python</li>
-                </ul>
-                <div class="text-[10px] text-indigo-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Voir la fiche →</div>
-            </a>
-
-            <!-- Bloc C1 -->
-            <a href="pro/c1_reseaux.html" class="group glass p-6 rounded-2xl hover:border-pink-500/50 transition">
-                <div class="flex items-center mb-3">
-                    <div class="p-2 bg-pink-500/10 rounded-lg mr-3 group-hover:bg-pink-500/20 transition"><svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg></div>
-                    <h3 class="cyber-font text-pink-400">C1 : Réseaux</h3>
-                </div>
-                <ul class="text-xs space-y-1 text-slate-400 mb-4">
-                    <li>• Modèles OSI / TCP-IP</li>
-                    <li>• Adressage & Sous-réseaux</li>
-                    <li>• Diagnostic & Wireshark</li>
-                </ul>
-                <div class="text-[10px] text-pink-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Voir la fiche →</div>
-            </a>
+        <div class="absolute bottom-8 left-0 right-0 text-center z-10">
+            <p class="text-[10px] uppercase tracking-widest text-slate-600 font-bold">Développé par Léo - Promotion 2026</p>
         </div>
-    </main>
+    </div>
 
-    <footer class="text-center py-10 text-slate-500 text-sm border-t border-white/5">
-        &copy; 2026 - Revision Hub BTS CIEL - Léo
-    </footer>
+    <script>
+        // Simple data floating animation logic if needed
+        console.log("Portal Initialized.");
+    </script>
 </body>
 </html>
