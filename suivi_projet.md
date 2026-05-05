@@ -15,7 +15,8 @@ Cette fiche est mise à jour à chaque étape de la création du site. Elle sert
 - [x] Export des PDFs de cours vers le dossier Téléchargements
 - [x] Création d'archives ZIP (max 10 fichiers/zip) pour les PDFs
 - [x] Enrichissement du site avec les données de filière JSON (B1, B3, C1, Probabilités, Physique avancée)
-- [x] Finalisation et polissage UI
+- [x] Mise à jour finale du dépôt GitHub
+- [x] Finalisation et polissage UI (V1.2)
 
 ## Structure du Projet
 - `index.html` : Portail central (Hub) avec navigation unifiée.

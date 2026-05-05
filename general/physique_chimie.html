@@ -48,7 +48,8 @@
                 <div style="font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; color: #a1a1aa; margin-bottom: 0.5rem; padding-left: 1rem; font-weight: bold;">📚 Approfondissement</div>
                 <a href="#amplification" class="toc-item">5. Amplification & Circuits</a>
                 <a href="#ondes" class="toc-item">6. Ondes & Lignes</a>
-                <a href="#signaux" class="toc-item">7. Analyse des Signaux</a>
+                <a href="#reponse" class="toc-item">7. Réponse des Systèmes</a>
+                <a href="#signaux" class="toc-item">8. Analyse des Signaux</a>
             </div>
             <a href="#documents" class="toc-item" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 0.5rem;">Documents du cours</a>
         </nav>
@@ -266,10 +267,38 @@
             </div>
         </section>
 
-        <!-- 7. ANALYSE DES SIGNAUX -->
+        <!-- 7. RÉPONSE DES SYSTÈMES -->
+        <section id="reponse" class="section">
+            <div class="section-title">
+                <h2>7. Réponse des Systèmes</h2>
+            </div>
+            <div class="grid">
+                <div class="card glass">
+                    <h3>Réponse Temporelle</h3>
+                    <p class="text-xs text-slate-400 mb-4">Étude de la réponse à un échelon (variation brusque de l'entrée).</p>
+                    <ul class="text-[11px] space-y-2 text-slate-400">
+                        <li>• <strong class="text-white">1er Ordre :</strong> Caractérisé par la constante de temps $\tau$. Réponse en $1 - e^{-t/\tau}$.</li>
+                        <li>• <strong class="text-white">2ème Ordre :</strong> Caractérisé par $f_0$ (fréquence propre) et $z$ (coefficient d'amortissement).</li>
+                    </ul>
+                </div>
+
+                <div class="card glass">
+                    <h3>Réponse Fréquentielle & Filtrage</h3>
+                    <p class="text-xs text-slate-400 mb-4">Étude du comportement en fonction de la fréquence (Diagrammes de Bode).</p>
+                    <div class="grid grid-cols-2 gap-2 text-[10px]">
+                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Passe-bas</div>
+                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Passe-haut</div>
+                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Passe-bande</div>
+                        <div class="p-2 bg-slate-900/50 rounded border border-white/5">Coupe-bande</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ANALYSE DES SIGNAUX -->
         <section id="signaux" class="section">
             <div class="section-title">
-                <h2>7. Analyse des Signaux</h2>
+                <h2>8. Analyse des Signaux</h2>
             </div>
             <div class="grid">
                 <div class="card glass span-full">
