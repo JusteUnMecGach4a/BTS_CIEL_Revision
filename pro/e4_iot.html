@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E4 : Projet Server Bay Monitoring - BTS CIEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .neon-box { border: 1px solid rgba(56, 189, 248, 0.3); box-shadow: 0 0 15px rgba(56, 189, 248, 0.1); }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="../index.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← HUB REVISION</a>
+            <span class="cyber-font text-sky-400 text-sm font-bold">PROJET E4 : IoT</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 max-w-5xl">
+        <header class="mb-12 text-center">
+            <h1 class="cyber-font text-4xl font-bold mb-4">Server Bay Monitoring</h1>
+            <p class="text-slate-400">Système de surveillance environnementale pour salle serveurs</p>
+            <div class="h-1 w-24 bg-sky-500 rounded-full mx-auto mt-6"></div>
+        </header>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Sidebar Navigation -->
+            <aside class="lg:col-span-1 space-y-4">
+                <div class="glass p-6 rounded-2xl sticky top-28">
+                    <h3 class="cyber-font text-xs font-bold text-slate-500 mb-6 tracking-widest uppercase">Sommaire</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#contexte" class="text-sky-400 hover:text-white transition flex items-center"><span class="w-1.5 h-1.5 bg-sky-400 rounded-full mr-2"></span> Contexte & Enjeux</a></li>
+                        <li><a href="#architecture" class="text-slate-400 hover:text-white transition flex items-center"><span class="w-1.5 h-1.5 bg-slate-700 rounded-full mr-2"></span> Architecture Système</a></li>
+                        <li><a href="#donnees" class="text-slate-400 hover:text-white transition flex items-center"><span class="w-1.5 h-1.5 bg-slate-700 rounded-full mr-2"></span> Modélisation Merise</a></li>
+                        <li><a href="#securite" class="text-slate-400 hover:text-white transition flex items-center"><span class="w-1.5 h-1.5 bg-slate-700 rounded-full mr-2"></span> Cybersécurité</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="lg:col-span-2 space-y-12">
+                <!-- Contexte -->
+                <section id="contexte" class="scroll-mt-28">
+                    <h2 class="cyber-font text-2xl font-bold mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Contexte et Enjeux
+                    </h2>
+                    <div class="glass p-8 rounded-3xl neon-box">
+                        <p class="text-slate-300 leading-relaxed">
+                            Surveillance critique de **4 baies serveurs**. L'objectif est de prévenir les pannes matérielles liées à des conditions environnementales hors normes (température excessive, humidité).
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+                            <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                                <div class="text-sky-400 font-bold text-xl mb-1">4</div>
+                                <div class="text-xs text-slate-500 uppercase">Unités Baies</div>
+                            </div>
+                            <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                                <div class="text-sky-400 font-bold text-xl mb-1">10s</div>
+                                <div class="text-xs text-slate-500 uppercase">Rafraîchissement</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Architecture -->
+                <section id="architecture" class="scroll-mt-28">
+                    <h2 class="cyber-font text-2xl font-bold mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        Architecture du Système
+                    </h2>
+                    <div class="space-y-6">
+                        <!-- IoT -->
+                        <div class="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
+                            <h3 class="font-bold text-white mb-2">1. Couche IoT (ESP32)</h3>
+                            <p class="text-sm text-slate-400 mb-4">Acquisition via capteurs **AHT20** (I2C) et synchronisation temporelle **NTP**.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-sky-500/10 text-sky-400 text-[10px] rounded border border-sky-500/20">C++ Embedded</span>
+                                <span class="px-2 py-1 bg-sky-500/10 text-sky-400 text-[10px] rounded border border-sky-500/20">I2C Pins 21/22</span>
+                                <span class="px-2 py-1 bg-sky-500/10 text-sky-400 text-[10px] rounded border border-sky-500/20">WiFi 2.4GHz</span>
+                            </div>
+                        </div>
+                        <!-- Serveur -->
+                        <div class="glass p-6 rounded-2xl border-l-4 border-l-indigo-500">
+                            <h3 class="font-bold text-white mb-2">2. Couche Serveur (Raspberry Pi)</h3>
+                            <p class="text-sm text-slate-400 mb-4">Concentrateur de données sous **Linux Debian** (Raspberry Pi 400).</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-[10px] rounded border border-indigo-500/20">Apache2</span>
+                                <span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-[10px] rounded border border-indigo-500/20">PHP 8.2</span>
+                                <span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-[10px] rounded border border-indigo-500/20">MariaDB (Port 13306)</span>
+                            </div>
+                        </div>
+                        <!-- Supervision -->
+                        <div class="glass p-6 rounded-2xl border-l-4 border-l-pink-500">
+                            <h3 class="font-bold text-white mb-2">3. Couche Supervision (Dashboard)</h3>
+                            <p class="text-sm text-slate-400 mb-4">Interface Web responsive pour le monitoring en temps réel.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-pink-500/10 text-pink-400 text-[10px] rounded border border-pink-500/20">Chart.js</span>
+                                <span class="px-2 py-1 bg-pink-500/10 text-pink-400 text-[10px] rounded border border-pink-500/20">Tailwind CSS</span>
+                                <span class="px-2 py-1 bg-pink-500/10 text-pink-400 text-[10px] rounded border border-pink-500/20">PDO MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Merise -->
+                <section id="donnees" class="scroll-mt-28">
+                    <h2 class="cyber-font text-2xl font-bold mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z"></path></svg>
+                        Modélisation Merise
+                    </h2>
+                    <div class="glass p-8 rounded-3xl">
+                        <div class="mb-8">
+                            <h3 class="text-emerald-400 font-bold mb-4 uppercase text-xs tracking-widest">MCD (Modèle Conceptuel)</h3>
+                            <div class="p-6 bg-slate-900/80 rounded-2xl border border-emerald-500/30 text-sm font-mono leading-relaxed">
+                                BAIE <span class="text-slate-500">(1,1)</span> --- <span class="text-emerald-400">[Contient]</span> --- <span class="text-slate-500">(1,1)</span> CAPTEUR<br>
+                                CAPTEUR <span class="text-slate-500">(0,n)</span> --- <span class="text-emerald-400">[Génère]</span> --- <span class="text-slate-500">(1,1)</span> MESURE
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-emerald-400 font-bold mb-4 uppercase text-xs tracking-widest">MLD (Modèle Logique)</h3>
+                            <div class="space-y-3">
+                                <div class="p-3 bg-slate-800/50 rounded-lg border border-white/5 font-mono text-xs">
+                                    <span class="text-emerald-400">baies</span> (<u>id_baie</u>, nom_baie)
+                                </div>
+                                <div class="p-3 bg-slate-800/50 rounded-lg border border-white/5 font-mono text-xs">
+                                    <span class="text-emerald-400">capteurs</span> (<u>id_capteur</u>, reference, #id_baie)
+                                </div>
+                                <div class="p-3 bg-slate-800/50 rounded-lg border border-white/5 font-mono text-xs">
+                                    <span class="text-emerald-400">mesures</span> (<u>id</u>, temperature, humidite, date_mesure, #id_capteur)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sécurité -->
+                <section id="securite" class="scroll-mt-28">
+                    <h2 class="cyber-font text-2xl font-bold mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        Cybersécurité Appliquée
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="glass p-6 rounded-2xl">
+                            <h3 class="font-bold text-rose-400 mb-3 text-sm">Contrôle d'Accès Web</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Mise en œuvre de **.htaccess** (AuthType Basic) et **.htpasswd** pour protéger le Dashboard. Utilisation de l'algorithme **Bcrypt** pour le stockage des identifiants.
+                            </p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl">
+                            <h3 class="font-bold text-rose-400 mb-3 text-sm">Sécurisation Réseau</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Firewall **UFW** configuré sur le Raspberry Pi pour n'autoriser que le réseau local SNIR (172.17.0.0/16) sur les ports 22, 80 et 13306.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            Revision Hub BTS CIEL - Module E4 Mini-Projet
+        </footer>
+    </main>
+</body>
+</html>

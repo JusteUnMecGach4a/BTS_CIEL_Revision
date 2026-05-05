@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 : Sécurité & Hachage - BTS CIEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #f43f5e, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="../index.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← HUB REVISION</a>
+            <span class="cyber-font text-rose-400 text-sm font-bold">BLOC F1 : SÉCURITÉ</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 max-w-4xl">
+        <header class="mb-12">
+            <h1 class="cyber-font text-4xl font-bold mb-4">Sécurité et Hachage</h1>
+            <div class="h-1 w-20 bg-rose-500 rounded-full"></div>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Intégrité -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-rose-400 mb-6 flex items-center">
+                    <span class="p-2 bg-rose-500/20 rounded-lg mr-3">01</span>
+                    Intégrité des Données
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    L'intégrité est l'un des trois piliers de la cybersécurité (avec la Confidentialité et la Disponibilité). Elle garantit que les données n'ont pas été modifiées ou corrompues.
+                </p>
+                <div class="p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl">
+                    <p class="text-sm text-rose-300"><strong>Enjeu :</strong> Détecter toute altération volontaire (attaque) ou involontaire (erreur de transmission) d'un fichier.</p>
+                </div>
+            </section>
+
+            <!-- Hachage -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-orange-400 mb-6 flex items-center">
+                    <span class="p-2 bg-orange-500/20 rounded-lg mr-3">02</span>
+                    Fonctions de Hachage
+                </h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-white mb-2">Qu'est-ce qu'une empreinte ?</h3>
+                        <p class="text-slate-400 text-sm">Une fonction de hachage transforme une donnée de taille arbitraire en une chaîne de caractères de taille fixe (l'empreinte ou hash).</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5 text-center">
+                            <div class="text-orange-400 font-bold mb-1">MD5</div>
+                            <div class="text-[10px] text-slate-500 italic">Obsolète (Collisions)</div>
+                        </div>
+                        <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5 text-center">
+                            <div class="text-orange-400 font-bold mb-1">SHA-256</div>
+                            <div class="text-[10px] text-slate-500 italic">Standard Actuel</div>
+                        </div>
+                        <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5 text-center">
+                            <div class="text-orange-400 font-bold mb-1">Bcrypt</div>
+                            <div class="text-[10px] text-slate-500 italic">Mots de Passe</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3 text-sm uppercase tracking-wider">Propriétés Fondamentales :</h3>
+                        <ul class="text-xs space-y-3 text-slate-400">
+                            <li><strong class="text-orange-300">Déterminisme :</strong> La même entrée produit toujours la même sortie.</li>
+                            <li><strong class="text-orange-300">Effet Avalanche :</strong> Une modification minime de l'entrée change radicalement le hash.</li>
+                            <li><strong class="text-orange-300">Non-réversibilité :</strong> Impossible de retrouver l'entrée à partir du hash (sens unique).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-yellow-400 mb-6 flex items-center">
+                    <span class="p-2 bg-yellow-500/20 rounded-lg mr-3">03</span>
+                    Applications Pratiques
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-800/30 rounded-2xl border-t-2 border-yellow-500">
+                        <h4 class="font-bold text-white mb-2">Mots de Passe</h4>
+                        <p class="text-xs text-slate-400">On ne stocke jamais un mot de passe en clair. On stocke son hash (souvent "salé" avec Bcrypt) et on compare les hash lors de la connexion.</p>
+                    </div>
+                    <div class="p-6 bg-slate-800/30 rounded-2xl border-t-2 border-yellow-500">
+                        <h4 class="font-bold text-white mb-2">Audit de Sécurité</h4>
+                        <p class="text-xs text-slate-400">Utilisation d'outils comme **John the Ripper** pour tester la robustesse des mots de passe par attaque par dictionnaire ou force brute.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            Revision Hub BTS CIEL - Module F1 Sécurité
+        </footer>
+    </main>
+</body>
+</html>
