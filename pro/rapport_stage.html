@@ -29,72 +29,99 @@
 
     <main class="container mx-auto px-4 max-w-4xl">
         <header class="mb-12">
-            <h1 class="cyber-font text-4xl font-bold mb-4">Méthodologie du Stage</h1>
-            <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+            <h1 class="cyber-font text-4xl font-bold mb-4">Méthodologie & Rapport de Stage</h1>
+            <div class="flex items-center gap-4">
+                <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+                <span class="text-xs text-slate-500 uppercase tracking-widest font-bold italic">Directive : 8 semaines | ~30 pages</span>
+            </div>
         </header>
 
         <div class="space-y-8">
-            <!-- Structure du Rapport -->
-            <section class="glass p-8 rounded-3xl border border-white/5">
+            <!-- Directives Générales -->
+            <section class="glass p-8 rounded-3xl border border-white/5 bg-amber-500/5">
                 <h2 class="cyber-font text-xl text-amber-400 mb-6 flex items-center">
                     <span class="p-2 bg-amber-500/20 rounded-lg mr-3">01</span>
-                    Structure du Rapport
+                    Directives Officielles
                 </h2>
-                <div class="space-y-4">
-                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
-                        <h3 class="font-bold text-white mb-2">1. Introduction</h3>
-                        <p class="text-xs text-slate-400">Présentation rapide du parcours, choix de l'entreprise et objectifs du stage.</p>
-                    </div>
-                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
-                        <h3 class="font-bold text-white mb-2">2. Présentation de l'Entreprise</h3>
-                        <p class="text-xs text-slate-400">Secteur d'activité, organigramme, infrastructure technique (réseaux, serveurs).</p>
-                    </div>
-                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
-                        <h3 class="font-bold text-white mb-2 text-amber-300">3. Travaux Réalisés (Cœur du rapport)</h3>
-                        <p class="text-xs text-slate-400">Analyse des besoins, solutions techniques choisies, schémas réseau (Visio/Packet Tracer), captures d'écran de configuration, tests de validation.</p>
-                    </div>
-                    <div class="p-4 bg-slate-900/50 rounded-xl border border-white/5">
-                        <h3 class="font-bold text-white mb-2">4. Conclusion & Bilan</h3>
-                        <p class="text-xs text-slate-400">Compétences acquises, difficultés rencontrées et perspectives professionnelles.</p>
-                    </div>
+                <div class="prose prose-invert max-w-none text-sm text-slate-300">
+                    <p>Le rapport doit documenter votre immersion professionnelle et vos réalisations techniques :</p>
+                    <ul class="list-disc list-inside space-y-2 mt-4">
+                        <li><strong class="text-white">Volume :</strong> Environ 30 pages (hors annexes).</li>
+                        <li><strong class="text-white">Anglais :</strong> Inclure impérativement 3 documents techniques en anglais.</li>
+                        <li><strong class="text-white">Contenu :</strong> Présentation entreprise, activités techniques, bilan et conclusion.</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- Conseils pour l'Oral -->
+            <!-- Structure Détaillée -->
             <section class="glass p-8 rounded-3xl border border-white/5">
                 <h2 class="cyber-font text-xl text-sky-400 mb-6 flex items-center">
                     <span class="p-2 bg-sky-500/20 rounded-lg mr-3">02</span>
-                    Préparer la Soutenance
+                    Points Principaux du Rapport
                 </h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-6 bg-slate-800/30 rounded-2xl border border-white/5">
-                        <h4 class="font-bold text-white mb-2">Le Support (Diaporama)</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Peu de texte, beaucoup de visuels (schémas, photos). Utilisez une charte graphique sobre mais "tech".
-                        </p>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3 text-sm uppercase text-sky-400">Entreprise & Service</h3>
+                        <ul class="text-xs text-slate-400 space-y-2">
+                            <li>• Historique & Chiffres clés.</li>
+                            <li>• Organigramme simplifié.</li>
+                            <li>• Focus sur le service (ex: Bureau Cyber, IT).</li>
+                        </ul>
                     </div>
-                    <div class="p-6 bg-slate-800/30 rounded-2xl border border-white/5">
-                        <h4 class="font-bold text-white mb-2">La Démonstration</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Si possible, prévoyez une vidéo de démonstration ou un accès distant sécurisé pour montrer vos réalisations en direct.
-                        </p>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3 text-sm uppercase text-sky-400">Analyse du Besoin</h3>
+                        <ul class="text-xs text-slate-400 space-y-2">
+                            <li>• État des lieux (obsolescence, failles).</li>
+                            <li>• Problématique & Enjeux Cybersécurité.</li>
+                            <li>• Cahier des charges résumé.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3 text-sm uppercase text-sky-400">Réalisations Techniques</h3>
+                        <ul class="text-xs text-slate-400 space-y-2">
+                            <li>• Choix technologiques (OS, Langages, BDD).</li>
+                            <li>• Étapes d'installation et configuration.</li>
+                            <li>• Tests de validation & Résolution d'erreurs.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3 text-sm uppercase text-sky-400">Bilan & Annexes</h3>
+                        <ul class="text-xs text-slate-400 space-y-2">
+                            <li>• Compétences techniques & Soft skills.</li>
+                            <li>• Glossaire & Certificat de stage.</li>
+                            <li>• Documentation technique en anglais.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- Checklist Technique -->
+            <!-- Exemples Concrets -->
             <section class="glass p-8 rounded-3xl border border-white/5">
                 <h2 class="cyber-font text-xl text-rose-400 mb-6 flex items-center">
                     <span class="p-2 bg-rose-500/20 rounded-lg mr-3">03</span>
-                    Checklist Technique
+                    Exemples de Projets (UEM & BA113)
                 </h2>
-                <div class="bg-slate-950/50 p-6 rounded-2xl">
-                    <ul class="text-xs space-y-3 text-slate-400">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Respect de la confidentialité (anonymisation des IPs/mots de passe).</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Lexique technique en fin de rapport.</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Annexes complètes (scripts, fiches techniques).</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span> Vérification orthographique rigoureuse.</li>
-                    </ul>
+                <div class="space-y-6">
+                    <!-- UEM -->
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border-l-4 border-rose-500">
+                        <h3 class="font-bold text-white mb-2">UEM : Sécurisation & Partage (Quentin B.)</h3>
+                        <p class="text-xs text-slate-400 mb-4 italic">Projet : Déploiement de Snappass (partage sécurisé de MDP).</p>
+                        <ul class="text-xs text-slate-300 space-y-2">
+                            <li>• <span class="text-rose-400 font-bold">Stack :</span> Red Hat, Apache, Redis, Python.</li>
+                            <li>• <span class="text-rose-400 font-bold">Action :</span> Traduction, customisation UI et sécurisation SSL.</li>
+                            <li>• <span class="text-rose-400 font-bold">Bonus :</span> Site de sensibilisation au phishing.</li>
+                        </ul>
+                    </div>
+                    <!-- BA113 -->
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border-l-4 border-sky-500">
+                        <h3 class="font-bold text-white mb-2">BA 113 : Gestion de Bases de Données (Lucas M.)</h3>
+                        <p class="text-xs text-slate-400 mb-4 italic">Projet : Refonte logiciel de gestion des accès (DACSSI).</p>
+                        <ul class="text-xs text-slate-300 space-y-2">
+                            <li>• <span class="text-sky-400 font-bold">Stack :</span> Microsoft Access, VBA.</li>
+                            <li>• <span class="text-sky-400 font-bold">Action :</span> Normalisation BDD, scripts VBA d'automatisation.</li>
+                            <li>• <span class="text-sky-400 font-bold">Défi :</span> Résolution des décalages de dates Excel/Access.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </div>
