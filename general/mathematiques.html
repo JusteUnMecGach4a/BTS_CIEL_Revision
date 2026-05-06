@@ -6,12 +6,6 @@
     <title>Mathématiques - Hub BTS CIEL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script>
-        MathJax = {
-            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
         .cyber-font { font-family: 'Orbitron', sans-serif; }
@@ -29,67 +23,42 @@
     </nav>
 
     <main class="container mx-auto px-4 max-w-4xl">
-        <header class="mb-12">
-            <h1 class="cyber-font text-4xl font-bold mb-4">Suites & Probabilités</h1>
-            <div class="h-1 w-20 bg-sky-500 rounded-full"></div>
+        <header class="mb-12 text-center">
+            <h1 class="cyber-font text-5xl font-bold mb-4 tracking-tighter">MODULES <span class="gradient-text">MATHS</span></h1>
+            <p class="text-slate-400">Sélectionnez un chapitre pour commencer vos révisions.</p>
+            <div class="h-1 w-20 bg-sky-500 rounded-full mx-auto mt-6"></div>
         </header>
 
-        <div class="space-y-8">
-            <!-- Suites -->
-            <section class="glass p-8 rounded-3xl border border-white/5">
-                <h2 class="cyber-font text-xl text-sky-400 mb-6 flex items-center">
-                    <span class="p-2 bg-sky-500/20 rounded-lg mr-3">01</span>
-                    Suites Numériques
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
-                        <h3 class="font-bold text-white mb-3">Arithmétiques</h3>
-                        <p class="text-xs text-slate-400 mb-2">Relation : $u_{n+1} = u_n + r$</p>
-                        <p class="text-xs text-slate-400">Terme général : $u_n = u_0 + n \cdot r$</p>
-                    </div>
-                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
-                        <h3 class="font-bold text-white mb-3">Géométriques</h3>
-                        <p class="text-xs text-slate-400 mb-2">Relation : $u_{n+1} = u_n \cdot q$</p>
-                        <p class="text-xs text-slate-400">Terme général : $u_n = u_0 \cdot q^n$</p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Suites & Proba -->
+            <a href="maths_suites_probabilites.html" class="group relative overflow-hidden glass p-8 rounded-3xl border border-white/5 hover:border-sky-500/50 transition-all hover:scale-[1.02]">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <svg class="w-24 h-24 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 12l3-3 3 3 4-4M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-sky-500/20 rounded-2xl flex items-center justify-center mb-6 text-sky-400 cyber-font font-bold text-xl">01</div>
+                    <h2 class="cyber-font text-2xl text-white mb-3">Suites & Probabilités</h2>
+                    <p class="text-sm text-slate-400 mb-6 leading-relaxed">Maîtrisez les suites arithmétiques, géométriques et les lois de probabilités (Binomiale, Poisson).</p>
+                    <div class="flex items-center text-xs text-sky-400 font-bold uppercase tracking-widest">
+                        Accéder au cours <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5-5 5M6 7l5 5-5 5"></path></svg>
                     </div>
                 </div>
-            </section>
+            </a>
 
-            <!-- Probabilités -->
-            <section class="glass p-8 rounded-3xl border border-white/5">
-                <h2 class="cyber-font text-xl text-indigo-400 mb-6 flex items-center">
-                    <span class="p-2 bg-indigo-500/20 rounded-lg mr-3">02</span>
-                    Probabilités & Lois
-                </h2>
-                <div class="space-y-6">
-                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
-                        <h3 class="font-bold text-white mb-3">Loi Binomiale $\mathcal{B}(n, p)$</h3>
-                        <div class="bg-slate-950/50 p-4 rounded-xl font-mono text-sm text-center">
-                            $$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$$
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
-                        <h3 class="font-bold text-white mb-3">Loi de Poisson $\mathcal{P}(\lambda)$</h3>
-                        <div class="bg-slate-950/50 p-4 rounded-xl font-mono text-sm text-center">
-                            $$P(X=k) = e^{-\lambda} \frac{\lambda^k}{k!}$$
-                        </div>
+            <!-- Intégrales -->
+            <a href="maths_integrales.html" class="group relative overflow-hidden glass p-8 rounded-3xl border border-white/5 hover:border-indigo-500/50 transition-all hover:scale-[1.02]">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <svg class="w-24 h-24 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                </div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-400 cyber-font font-bold text-xl">02</div>
+                    <h2 class="cyber-font text-2xl text-white mb-3">Calcul Intégral</h2>
+                    <p class="text-sm text-slate-400 mb-6 leading-relaxed">Apprenez à calculer des primitives, des intégrales et à déterminer des valeurs moyennes.</p>
+                    <div class="flex items-center text-xs text-indigo-400 font-bold uppercase tracking-widest">
+                        Accéder au cours <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5-5 5M6 7l5 5-5 5"></path></svg>
                     </div>
                 </div>
-            </section>
-
-            <!-- Documents -->
-            <section class="glass p-8 rounded-3xl border border-white/5">
-                <h2 class="cyber-font text-xl text-pink-400 mb-6 flex items-center">
-                    <span class="p-2 bg-pink-500/20 rounded-lg mr-3">03</span>
-                    Ressources
-                </h2>
-                <div class="grid grid-cols-1 gap-4">
-                    <a href="assets/Mathematiques/Suites_Cours.pdf" class="flex items-center p-4 bg-slate-900/50 rounded-xl hover:bg-slate-800 transition border border-white/5">
-                        <span class="text-pink-400 mr-3">PDF</span>
-                        <span class="text-sm">Cours complet sur les suites</span>
-                    </a>
-                </div>
-            </section>
+            </a>
         </div>
 
         <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">

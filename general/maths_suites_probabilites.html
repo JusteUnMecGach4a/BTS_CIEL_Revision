@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suites & Probabilités - Hub BTS CIEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-border { border: 1px solid #38bdf8; box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="mathematiques.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← MATHÉMATIQUES</a>
+            <span class="cyber-font text-sky-400 text-sm font-bold">SUITES & PROBABILITÉS</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 max-w-4xl">
+        <header class="mb-12">
+            <h1 class="cyber-font text-4xl font-bold mb-4">Suites & Probabilités</h1>
+            <div class="h-1 w-20 bg-sky-500 rounded-full"></div>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Suites -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-sky-400 mb-6 flex items-center">
+                    <span class="p-2 bg-sky-500/20 rounded-lg mr-3">01</span>
+                    Suites Numériques
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3">Arithmétiques</h3>
+                        <p class="text-xs text-slate-400 mb-2">Relation : $u_{n+1} = u_n + r$</p>
+                        <p class="text-xs text-slate-400">Terme général : $u_n = u_0 + n \cdot r$</p>
+                    </div>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3">Géométriques</h3>
+                        <p class="text-xs text-slate-400 mb-2">Relation : $u_{n+1} = u_n \cdot q$</p>
+                        <p class="text-xs text-slate-400">Terme général : $u_n = u_0 \cdot q^n$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Probabilités -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-indigo-400 mb-6 flex items-center">
+                    <span class="p-2 bg-indigo-500/20 rounded-lg mr-3">02</span>
+                    Probabilités & Lois
+                </h2>
+                <div class="space-y-6">
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3">Loi Binomiale $\mathcal{B}(n, p)$</h3>
+                        <div class="bg-slate-950/50 p-4 rounded-xl font-mono text-sm text-center">
+                            $$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3">Loi de Poisson $\mathcal{P}(\lambda)$</h3>
+                        <div class="bg-slate-950/50 p-4 rounded-xl font-mono text-sm text-center">
+                            $$P(X=k) = e^{-\lambda} \frac{\lambda^k}{k!}$$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documents -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-pink-400 mb-6 flex items-center">
+                    <span class="p-2 bg-pink-500/20 rounded-lg mr-3">03</span>
+                    Ressources
+                </h2>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="assets/Mathematiques/Suites_Cours.pdf" class="flex items-center p-4 bg-slate-900/50 rounded-xl hover:bg-slate-800 transition border border-white/5">
+                        <span class="text-pink-400 mr-3">PDF</span>
+                        <span class="text-sm">Cours complet sur les suites</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            Revision Hub BTS CIEL - Mathématiques
+        </footer>
+    </main>
+</body>
+</html>

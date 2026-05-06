@@ -17,6 +17,9 @@ Cette fiche est mise à jour à chaque étape de la création du site. Elle sert
 - [x] Enrichissement du site avec les données de filière JSON (B1, B3, C1, Probabilités, Physique avancée)
 - [x] Mise à jour finale du dépôt GitHub
 - [x] Finalisation et polissage UI (V1.2)
+- [x] Restructuration de la section Mathématiques (Hub + Pages dédiées)
+- [x] Ajout de la page complète sur le Calcul Intégral
+- [x] Création des fichiers d'instructions IA et README
 
 ## Structure du Projet
 - `index.html` : Portail central (Hub) avec navigation unifiée.

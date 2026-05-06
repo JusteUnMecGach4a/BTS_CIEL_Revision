@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Intégral - Hub BTS CIEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-border { border: 1px solid #38bdf8; box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="mathematiques.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← MATHÉMATIQUES</a>
+            <span class="cyber-font text-sky-400 text-sm font-bold">CALCUL INTÉGRAL</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 max-w-4xl">
+        <header class="mb-12">
+            <h1 class="cyber-font text-4xl font-bold mb-4">Calcul Intégral</h1>
+            <div class="h-1 w-20 bg-sky-500 rounded-full"></div>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Primitives -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-sky-400 mb-6 flex items-center">
+                    <span class="p-2 bg-sky-500/20 rounded-lg mr-3">01</span>
+                    Primitives Usuelles
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="text-xs uppercase text-sky-400 border-b border-white/10">
+                            <tr>
+                                <th class="py-3 px-4">Fonction $f(x)$</th>
+                                <th class="py-3 px-4">Primitive $F(x)$</th>
+                                <th class="py-3 px-4">Intervalle</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr>
+                                <td class="py-3 px-4">$a$ (constante)</td>
+                                <td class="py-3 px-4">$ax + C$</td>
+                                <td class="py-3 px-4">$\mathbb{R}$</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4">$x^n$ ($n \neq -1$)</td>
+                                <td class="py-3 px-4">$\frac{x^{n+1}}{n+1} + C$</td>
+                                <td class="py-3 px-4">$\mathbb{R}$ ou $]0, +\infty[$</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4">$\frac{1}{x}$</td>
+                                <td class="py-3 px-4">$\ln(x) + C$</td>
+                                <td class="py-3 px-4">$]0, +\infty[$</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4">$e^{ax}$</td>
+                                <td class="py-3 px-4">$\frac{1}{a} e^{ax} + C$</td>
+                                <td class="py-3 px-4">$\mathbb{R}$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Définition -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-indigo-400 mb-6 flex items-center">
+                    <span class="p-2 bg-indigo-500/20 rounded-lg mr-3">02</span>
+                    L'Intégrale
+                </h2>
+                <div class="space-y-6">
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h3 class="font-bold text-white mb-3">Définition fondamentale</h3>
+                        <p class="text-sm text-slate-400 mb-4">Si $F$ est une primitive de $f$ sur $[a, b]$, alors :</p>
+                        <div class="bg-slate-950/50 p-4 rounded-xl font-mono text-xl text-center text-sky-400">
+                            $$\int_{a}^{b} f(x) \, dx = [F(x)]_a^b = F(b) - F(a)$$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Propriétés -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-emerald-400 mb-6 flex items-center">
+                    <span class="p-2 bg-emerald-500/20 rounded-lg mr-3">03</span>
+                    Propriétés
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2 uppercase text-xs">Linéarité</h4>
+                        <p class="text-xs text-slate-400">$\int (af + bg) = a \int f + b \int g$</p>
+                    </div>
+                    <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2 uppercase text-xs">Relation de Chasles</h4>
+                        <p class="text-xs text-slate-400">$\int_a^c f + \int_c^b f = \int_a^b f$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Valeur Moyenne -->
+            <section class="glass p-8 rounded-3xl border border-white/5">
+                <h2 class="cyber-font text-xl text-amber-400 mb-6 flex items-center">
+                    <span class="p-2 bg-amber-500/20 rounded-lg mr-3">04</span>
+                    Valeur Moyenne
+                </h2>
+                <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                    <p class="text-sm text-slate-400 mb-4">La valeur moyenne $V_m$ d'une fonction $f$ sur $[a, b]$ est :</p>
+                    <div class="bg-slate-950/50 p-4 rounded-xl font-mono text-xl text-center text-amber-400">
+                        $$V_m = \frac{1}{b-a} \int_{a}^{b} f(t) \, dt$$
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            Revision Hub BTS CIEL - Mathématiques
+        </footer>
+    </main>
+</body>
+</html>
