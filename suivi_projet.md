@@ -20,6 +20,11 @@ Cette fiche est mise à jour à chaque étape de la création du site. Elle sert
 - [x] Restructuration de la section Mathématiques (Hub + Pages dédiées)
 - [x] Ajout de la page complète sur le Calcul Intégral
 - [x] Création des fichiers d'instructions IA et README
+- [x] Migration du projet vers `d:\BTS_CIEL_Revision_Hub`
+- [x] Importation de l'intégralité des cours (PDF) depuis `Documents/Cours`
+- [x] Intégration de la Synthèse Annuelle (`synthese.html`)
+- [x] Centralisation des Comptes Rendus (`comptes_rendus.html`)
+- [x] Mise à jour du Dashboard et de la Bibliothèque
 
 ## Structure du Projet
 - `index.html` : Portail central (Hub) avec navigation unifiée.

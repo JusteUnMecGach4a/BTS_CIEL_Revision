@@ -17,6 +17,7 @@
     <nav class="sticky top-0 z-50 glass border-b border-white/10 p-4 mb-12">
         <div class="container mx-auto flex justify-between items-center">
             <a href="../dashboard.html" class="cyber-font text-xl font-bold gradient-text hover:opacity-80 transition">← HUB REVISION</a>
+            <a href="comptes_rendus.html" class="hover:text-sky-400 transition">Rapports</a>
             <span class="cyber-font text-sky-400 text-sm font-bold">BIBLIOTHÈQUE NUMÉRIQUE</span>
         </div>
     </nav>
@@ -76,16 +77,22 @@
 
         <!-- Section Archive Complète (Aperçu) -->
         <section class="mt-12 glass p-8 rounded-3xl border border-white/5">
-            <h2 class="cyber-font text-xl text-pink-400 mb-6">Autres Documents</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="p-3 bg-slate-900/30 rounded-lg border border-white/5 text-[10px] text-slate-500 italic">
-                    Accès direct via le dossier assets/cours_pdf/...
-                </div>
-                <!-- Note: In a real app, we would list all 78 files here. 
-                     For the demo, we show the most relevant ones. -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="cyber-font text-xl text-pink-400">Rapports & Synthèses</h2>
+                <a href="comptes_rendus.html" class="text-xs text-pink-400 hover:underline">Voir tout →</a>
             </div>
-            <div class="mt-8 text-center">
-                <p class="text-xs text-slate-500">Tous les fichiers (78 documents) ont été intégrés au projet et sont synchronisés sur GitHub.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="../general/synthese.html" class="flex items-center p-4 bg-slate-900/50 rounded-xl border border-white/5 hover:bg-slate-800 transition">
+                    <span class="text-pink-400 mr-3">📄</span>
+                    <span class="text-sm">Synthèse Annuelle BTS CIEL</span>
+                </a>
+                <a href="comptes_rendus.html" class="flex items-center p-4 bg-slate-900/50 rounded-xl border border-white/5 hover:bg-slate-800 transition">
+                    <span class="text-pink-400 mr-3">📝</span>
+                    <span class="text-sm">Recueil des Comptes Rendus (B1-F1)</span>
+                </a>
+            </div>
+            <div class="mt-8 text-center pt-8 border-t border-white/5">
+                <p class="text-xs text-slate-500 italic">Tous les documents officiels (PDF) ont été synchronisés depuis le dossier Documents/Cours.</p>
             </div>
         </section>
 

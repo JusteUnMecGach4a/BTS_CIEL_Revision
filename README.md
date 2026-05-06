@@ -3,10 +3,12 @@
 Un portail de révision moderne et interactif pour le BTS CIEL (Cybersécurité, Informatique et réseaux, Électronique).
 
 ## 🚀 Fonctionnalités
+- **Migration** : Désormais centralisé dans `Documents/BTS_CIEL_Revision_Hub`.
 - **Design Cyberpunk** : Interface immersive avec effets de néon et glassmorphism.
 - **Révision Multi-Blocs** : Couvre les matières générales et professionnelles.
+- **Synthèse Annuelle** : Bilan complet des compétences acquises.
+- **Comptes Rendus** : Centralisation des rapports de TP et cours (B1 à F1).
 - **Support LaTeX** : Formules mathématiques et physiques parfaitement rendues via MathJax.
-- **Responsive** : Consultable sur PC, tablette et mobile.
 
 ## 📚 Contenu
 - **Mathématiques** : Suites, Probabilités, Calcul Intégral.

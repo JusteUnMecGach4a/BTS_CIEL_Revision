@@ -32,6 +32,8 @@
                 <a href="#c1" class="hover:text-sky-400 transition">C1</a>
                 <a href="#e4" class="hover:text-sky-400 transition">E4</a>
                 <a href="#f1" class="hover:text-sky-400 transition">F1</a>
+                <a href="general/synthese.html" class="hover:text-sky-400 transition">Synthèse</a>
+                <a href="pro/comptes_rendus.html" class="hover:text-sky-400 transition">Rapports</a>
                 <a href="pro/bibliotheque.html" class="hover:text-sky-400 transition">Bibliothèque</a>
                 <a href="https://0550002d.moodle.monbureaunumerique.fr/my/courses.php" target="_blank" class="ml-4 px-3 py-1 bg-sky-500/20 text-sky-400 rounded-lg border border-sky-500/30 hover:bg-sky-500/40 transition">Moodle ENT</a>
             </div>
@@ -48,35 +50,29 @@
     </header>
 
     <main class="container mx-auto px-4 pb-20 space-y-12">
-        <!-- PRIORITÉ : STAGE -->
-        <section id="priority" class="scroll-mt-24">
-            <div class="flex items-center mb-6">
-                <span class="flex h-3 w-3 mr-3">
-                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-amber-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
-                </span>
-                <h3 class="cyber-font text-xl font-bold text-amber-500 tracking-widest">PRIORITÉ : STAGE 2026</h3>
-            </div>
+        <!-- PRIORITÉ : STAGE & SYNTHÈSE -->
+        <div class="grid md:grid-cols-2 gap-6 scroll-mt-24" id="priority">
+            <!-- STAGE -->
             <a href="pro/rapport_stage.html" class="group block glass p-8 rounded-3xl border-2 border-amber-500/50 hover:border-amber-400 transition-all shadow-[0_0_30px_rgba(245,158,11,0.1)]">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                    <div class="flex items-center">
-                        <div class="p-4 bg-amber-500/20 rounded-2xl mr-6"><svg class="w-10 h-10 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
-                        <div>
-                            <h4 class="cyber-font text-2xl text-white mb-1">Rapport & Méthodologie</h4>
-                            <p class="text-slate-400 text-sm">Préparez vos 8 semaines d'immersion et votre rapport de 30 pages.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="px-4 py-2 bg-slate-800 rounded-lg border border-white/5 text-[10px] text-amber-400 font-bold uppercase tracking-tighter text-center">
-                            30 Pages<br><span class="text-slate-500">Maximum</span>
-                        </div>
-                        <div class="px-4 py-2 bg-slate-800 rounded-lg border border-white/5 text-[10px] text-sky-400 font-bold uppercase tracking-tighter text-center">
-                            3 Docs Anglais<br><span class="text-slate-500">Annexes</span>
-                        </div>
+                <div class="flex items-center">
+                    <div class="p-4 bg-amber-500/20 rounded-2xl mr-6"><svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                    <div>
+                        <h4 class="cyber-font text-xl text-white mb-1">Rapport de Stage</h4>
+                        <p class="text-slate-400 text-xs">Méthodologie & 8 semaines d'immersion.</p>
                     </div>
                 </div>
             </a>
-        </section>
+            <!-- SYNTHÈSE -->
+            <a href="general/synthese.html" class="group block glass p-8 rounded-3xl border-2 border-sky-500/50 hover:border-sky-400 transition-all shadow-[0_0_30px_rgba(56,189,248,0.1)]">
+                <div class="flex items-center">
+                    <div class="p-4 bg-sky-500/20 rounded-2xl mr-6"><svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+                    <div>
+                        <h4 class="cyber-font text-xl text-white mb-1">Synthèse Annuelle</h4>
+                        <p class="text-slate-400 text-xs">Bilan des compétences BTS CIEL 2026.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
 
         <!-- Matières Générales -->
         <section id="general" class="scroll-mt-24">
